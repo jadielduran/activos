@@ -5,10 +5,10 @@
     <div class="card">
       <div class="card-content">
         <form @submit.prevent="nuevo()">
-          <p>Tipo Activo: <input type="text" v-model="payload.NameArea" required/></p>
-          <p>Marca: <input type="text" v-model="payload.NameAdmin" required/></p>
-          <p>Modelo: <input type="text" v-model="payload.NameAdmin" required/></p>
-          <p v-if="areas.length > 0">
+          <p>Tipo Activo: <input type="text" v-model="payload.Type" required/></p>
+          <p>Marca: <input type="text" v-model="payload.MarkName" required/></p>
+          <p>Modelo: <input type="text" v-model="payload.Model" required/></p>
+          <p v-if="areas.length > 0">Area: 
             <select v-model="payload.AreaId">
             <option :value="areas.id" v-for="area in areas">{{area.NameArea}}</option>
             </select>

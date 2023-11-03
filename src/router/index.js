@@ -31,6 +31,11 @@ const routes = [
     name: 'activos',
 
     component: () => import(/* webpackChunkName: "activos" */ '../views/ActivosView.vue')
+  },
+  {
+    path: '/activos/:id',
+    name: 'activosUpdate',
+    component: () => import(/* webpackChunkName: "areasUpdate" */ '../views/ActivosUpdateView.vue')
   }
 ]
 

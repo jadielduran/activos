@@ -5,7 +5,11 @@
       "NameAdmin": "Juan Torrez Lopez",
       "NumEmployes": 6,
       "active": true,
-      "id": 1
+      "id": 1,
+      "Type": "Laptop",
+      "MarkName": "HP",
+      "Model": "Pavilion 360",
+      "Status": "usado"
     },
     {
       "NameArea": "Sistemas",
@@ -41,8 +45,15 @@
       "Type": "Laptop",
       "MarkName": "HP",
       "Model": "Pavilion 360",
-      "Status": "Nuevo",
+      "Status": "usado",
       "AreaId": 1
+    },
+    {
+      "Type": "Laptop",
+      "MarkName": "Lenovo",
+      "Model": "Thinkin",
+      "Status": "Nuevo",
+      "id": 2
     }
   ]
 }
