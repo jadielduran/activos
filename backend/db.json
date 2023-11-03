@@ -1,21 +1,48 @@
 {
-    "Areas": [
-      {
-        "NameArea": "Legal",
-        "NameAdmin": "Juan Torrez Lopez",
-        "NumEmployes":5,
-        "Status": true,
-        "Id": 1
-      }
-    ],
-    "Activos": [
-      {
-        "Id": 1,
-        "Type": "Laptop",
-        "MarkName": "HP",
-        "Model": "Pavilion 360",
-        "Status": "Nuevo",
-        "AreaId": 1
-      }
-    ]
-  }
+  "Areas": [
+    {
+      "NameArea": "Legal",
+      "NameAdmin": "Juan Torrez Lopez",
+      "NumEmployes": 6,
+      "active": true,
+      "id": 1
+    },
+    {
+      "NameArea": "Sistemas",
+      "NameAdmin": "Pedro Perez Ruiz",
+      "NumEmployes": 3,
+      "active": true,
+      "id": 2
+    },
+    {
+      "NameArea": "Recursos Humanos",
+      "NameAdmin": "Luis Vargas Cusi",
+      "NumEmployes": 8,
+      "active": true,
+      "id": 3
+    },
+    {
+      "NameArea": "Contabilidad",
+      "NameAdmin": "Galo Valda Vita",
+      "NumEmployes": 10,
+      "id": 4
+    },
+    {
+      "NameArea": "Procesos",
+      "NameAdmin": "Liza Roma Vaca",
+      "NumEmployes": 2,
+      "active": true,
+      "id": 6
+    }
+  ],
+  "Activos": [
+    {
+      "Id": 1,
+      "Type": "Laptop",
+      "MarkName": "HP",
+      "Model": "Pavilion 360",
+      "Status": "Nuevo",
+      "AreaId": 1
+    }
+  ]
+}

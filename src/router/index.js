@@ -20,7 +20,12 @@ const routes = [
     name: 'areas',
 
     component: () => import(/* webpackChunkName: "areas" */ '../views/AreasView.vue')
-  }
+  },
+  {
+    path: '/areas/:id',
+    name: 'areasUpdate',
+    component: () => import(/* webpackChunkName: "areasUpdate" */ '../views/AreasUpdateView.vue')
+  },
 ]
 
 const router = createRouter({

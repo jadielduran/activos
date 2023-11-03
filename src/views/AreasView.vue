@@ -1,32 +1,47 @@
 <template>
-  <h1>Areas</h1>
+  <div class="container">
+    <h2>Areas</h2>
 
-  <form @submit.prevent="nuevo()">
-    <p>Nombre Area: <input type="text" v-model="payload.NameArea" required/></p>
-    <p>Nombre Encargado: <input type="text" v-model="payload.NameAdmin" required/></p>
-    <p>Numero de Empleados: <input type="number" v-model="payload.NumEmployes" required/></p>
-    <button type="submit" >Agregar</button>
-  </form>
-
-  <table class="striped">
-        <thead>
-          <tr>
+    <div class="card">
+      <div class="card-content">
+        <form @submit.prevent="nuevo()">
+          <p>Nombre Area: <input type="text" v-model="payload.NameArea" required/></p>
+          <p>Nombre Encargado: <input type="text" v-model="payload.NameAdmin" required/></p>
+          <p>Numero de Empleados: <input type="number" v-model="payload.NumEmployes" required/></p>
+          <button type="submit" class="waves-effect waves-light btn-small">Agregar</button>
+        </form>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-content">
+        <table class="striped">
+          <thead>
+            <tr>
               <th>Id</th>
               <th>Area</th>
               <th>Encargado</th>
               <th>Num. Empleados</th>
-          </tr>
-        </thead>
+              <th></th>
+            </tr>
+          </thead>
 
-        <tbody>
-          <tr v-for="item in items">
-            <td>{{ item.Id }}</td>
-            <td>{{ item.NameArea }}</td>
-            <td>{{ item.NameAdmin }}</td>
-            <td>{{ item.NumEmployes }}</td>
-          </tr>
-        </tbody>
-      </table>
+          <tbody>
+            <tr v-for="item in items">
+              <td>{{ item.id }}</td>
+              <td>{{ item.NameArea }}</td>
+              <td>{{ item.NameAdmin }}</td>
+              <td>{{ item.NumEmployes }}</td>
+              <td>
+                <a class="app-btn btn-small btn-floating btn-large waves-effect waves-light red"><i class="material-icons" @click="eliminar(item.id)" >delete</i></a>
+                <a class="app-btn btn-small btn-floating btn-large waves-effect waves-light blue "><i class="material-icons" @click="update(item.id)" >edit</i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>    
 </template>
 
 <script>
@@ -41,11 +56,29 @@ export default {
       payload:{
         NameArea:null,
         NameAdmin:null,
-        NumEmployes:null
+        NumEmployes:null,
+        active:true
       }
     }
   },
   methods: {
+    update(id) {
+            this.$router.push('/Areas/' + id);
+        },
+    eliminar(id) {
+            if (confirm("Esta seguro de eliminar?.")) {
+                this.axios({
+                    method: 'delete',
+                    url: this.api + '/Areas/' + id
+                }).
+                then((response) => {
+                    this.getList();
+                }).
+                catch((error) => {
+                    console.log(error);
+                });
+            }
+        },
     nuevo(){
       this.axios({
         method: 'post',
@@ -53,7 +86,7 @@ export default {
         data: this.payload
       }).
       then((response)=>{
-        //this.getList();
+        this.getList();
         console.log(response);
       }).
       catch((error)=>{
