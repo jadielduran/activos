@@ -26,6 +26,12 @@ const routes = [
     name: 'areasUpdate',
     component: () => import(/* webpackChunkName: "areasUpdate" */ '../views/AreasUpdateView.vue')
   },
+  {
+    path: '/activos',
+    name: 'activos',
+
+    component: () => import(/* webpackChunkName: "activos" */ '../views/ActivosView.vue')
+  }
 ]
 
 const router = createRouter({

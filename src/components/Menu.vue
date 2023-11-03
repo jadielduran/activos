@@ -10,16 +10,23 @@
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/about">About</router-link></li>
         <li><router-link to="/areas">Areas</router-link></li>
+        <li><router-link to="/activos">Activos</router-link></li>
       </ul>
     </div>
   </nav>
 </template>
 
 <script>
+import M from 'materialize-css'
 export default {
   name: 'menu',
   props: {
     msg: String
+  },
+  mounted() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+    this.sidenav = instances[0];
   }
 }
 </script>
