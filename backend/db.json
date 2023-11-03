@@ -1,0 +1,21 @@
+{
+    "Areas": [
+      {
+        "NameArea": "Legal",
+        "NameAdmin": "Juan Torrez Lopez",
+        "NumEmployes":5,
+        "Status": true,
+        "Id": 1
+      }
+    ],
+    "Activos": [
+      {
+        "Id": 1,
+        "Type": "Laptop",
+        "MarkName": "HP",
+        "Model": "Pavilion 360",
+        "Status": "Nuevo",
+        "AreaId": 1
+      }
+    ]
+  }
